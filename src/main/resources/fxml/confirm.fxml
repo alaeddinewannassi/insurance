@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx/8.0.102-ea"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.esprit.confirmpage.ConfirmController">
+
+    <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true">
+
+        <StackPane id="root">
+            <GridPane id="pane" alignment="CENTER" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity"
+                      snapToPixel="false" vgap="10">
+
+                <Label alignment="CENTER" fx:id="price" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+
+                <VBox alignment="CENTER" spacing="1.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="171.0"
+                           text="Select payment type"/>
+
+                    <ComboBox fx:id="paymentType" promptText="Payment type">
+                        <VBox.margin>
+                            <Insets/>
+                        </VBox.margin>
+                    </ComboBox>
+                </VBox>
+
+
+                <VBox fx:id="cardData" visible="false" alignment="CENTER" spacing="1.0" GridPane.columnIndex="0"
+                      GridPane.rowIndex="2">
+                    <HBox spacing="1.0">
+                        <TextField fx:id="cardNumber" promptText="0000 0000 0000 0000"/>
+
+                        <ImageView fx:id="cardTypeImage"/>
+                    </HBox>
+                    <Label text="Incorrect card details" textFill="red" fx:id="cardNumberError" visible="false"/>
+
+
+                    <TextField fx:id="cvv" promptText="CVV"/>
+                    <Label text="The field is empty" textFill="red" fx:id="cvvError" visible="false"/>
+                    <HBox>
+                        <TextField fx:id="expirationDateMonth" maxWidth="40" promptText="00"/>
+                        <Label text="/"/>
+                        <TextField maxWidth="40" fx:id="expirationDateYear" promptText="00"/>
+                    </HBox>
+                    <Label text="The field is empty" textFill="red" fx:id="expirationDateError" visible="false"/>
+                    <TextField fx:id="zipCode" promptText="Postal code"/>
+                    <Label text="The field is empty" textFill="red" fx:id="zipCodeError" visible="false"/>
+                </VBox>
+
+
+                <Button id="dark-blue" fx:id="submissionButton" text="Confirmation of insurance" visible="false" GridPane.columnIndex="0"
+                        GridPane.rowIndex="3"/>
+
+                <padding>
+                    <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+                </padding>
+
+            </GridPane>
+        </StackPane>
+
+    </ScrollPane>
+
+</StackPane>
